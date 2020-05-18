@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Leven N Twell</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        function openPage(param) {
+            console.log("Received Page Name: " + param);
+            window.open(param)
+        }
+
+        const PAGE = {
+            PIZZA : 'pizzaz.html',
+              
+            SANDWICH : 'sandwich.html' ,
+
+            DESSERT : 'desserts.html' ,
+
+            DRINKS : 'drinks.html' ,
+
+            PASTA : 'pastaa.html' ,
+
+            AMBIENCE : 'Ambience.html' 
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="mlog">
+                <img src="images/levvs.png" alt="" width="250" height="150">
+                <div class="header">
+                    <h1>
+                        <center>
+                            Leven n Twell
+                        </center>
+                    </h1>
+                    <h2>
+                        <center>Buon Pasto</center>
+                    </h2>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper active-nav-link">
+                    <a href="index.html">Home</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="Want_a_table.html">Let's Get a Table</a>
+                </div>
+
+            </div>
+
+            <div class="right-side">
+                <div class="brand">
+                    <a href="about.html">About us!</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+
+        <div class="webpage-wrapper">
+
+        <div class="wepage" onclick="openPage(PAGE.PIZZA)">
+                <div class="image" style="background-image: url(./images/thumb.jpg);"></div>
+
+                <div class="img-txt">
+                    <div class="logo">
+                        <img src="images/pizzalogo.png" alt="" width="200" height="100">
+                    </div>
+
+                    <div class="sbtitle">
+                        Pizzas.
+                    </div>
+                </div>
+            </div>
+            <div class="wepage" onclick="openPage(PAGE.SANDWICH)">
+                <div class="image" style="background-image: url(./images/Veg-Sandwich.jpg);"></div>
+
+                <div class="img-txt">
+                    <div class="logo">
+                        <img src="images/sandwichlogo.png" alt="" width="200" height="100">
+                    </div>
+
+                    <div class="sbtitle">
+                        Sandwich.
+                    </div>
+                </div>
+            </div>
+            <div class="wepage" onclick="openPage(PAGE.PASTA)">
+                <div class="image"
+                    style="background-image: url(./images/Alfredo-Pasta-Bacon-tasteandtellblog.com-1.jpg);"></div>
+
+                <div class="img-txt">
+                    <div class="logo">
+                        <img src="images/pastalogo.png" alt="" width="200" height="100">
+                    </div>
+
+                    <div class="sbtitle">
+                        Pasta.
+                    </div>
+                </div>
+            </div>
+            <div class="wepage" onclick="openPage(PAGE.DRINKS)">
+                <div class="image" style="background-image: url(./images/drinks.jpeg);"></div>
+
+                <div class="img-txt">
+                    <div class="logo">
+                        <img src="images/drinkslogo.png" alt="" width="200" height="100">
+                    </div>
+
+                    <div class="sbtitle">
+                        Drinks.
+                    </div>
+                </div>
+            </div>
+            <div class="wepage" onclick="openPage(PAGE.DESSERT)">
+                <div class="image" style="background-image: url(./images/cheese.jpeg);"></div>
+
+                <div class="img-txt">
+                    <div class="logo">
+                        <img src="images/dessertlogo.jpeg" alt="" width="200" height="100">
+                    </div>
+
+                    <div class="sbtitle">
+                        Desserts.
+                    </div>
+                </div>
+            </div>
+            <div class="wepage" onclick="openPage(PAGE.AMBIENCE)">
+                <div class="image" style="background-image: url(./images/takeaway.jpeg);"></div>
+
+                <div class="img-txt">
+                    <div class="logo">
+                        <img src="images/abince.jpeg" alt="" width="200" height="100">
+                    </div>
+
+                    <div class="sbtitle">
+                        Ambience.
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+</body>
+
+<script src="animation.js"></script>
+
+</html>

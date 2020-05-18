@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <title> Let's Get Booking </title>
+    <link rel="stylesheet" type="text/css" href="Form.css">
+    <script>
+        let makeAReservation = async () => {
+
+            console.log("Making a reservation");
+            let name = document.getElementById("name1").value;
+            let email = document.getElementById("email1").value;
+            let phone = document.getElementById("number1").value;
+            let time = document.getElementById("time1").value;
+            let date = document.getElementById("date1").value;
+            let guests = document.getElementById('guests').value;
+
+            console.log(name)
+            console.log(email)
+            console.log(phone)
+            console.log(time);
+            console.log(date)
+
+            let reservationDetails = {
+                phone: phone,
+                date: date + ' ' + time,
+                guests: guests
+            }
+
+            let response = await fetch('http://localhost:4000/reservation', {
+                method: 'POST',
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify(reservationDetails)
+            });
+
+            let data = await response.json();
+
+            if(data.error && data.error.err === 'NO_SLOTS') {
+                alert("Sorry! No slots available")
+            } else {
+                window.open("./tablebooked.html", "_blank")
+            }
+
+            console.log("Received Response Data: ", data);
+
+        }
+    </script>
+</head>
+
+<body>
+    <meta charset="utf-8">
+    <div class="table">
+        <img src="images/levvs.png" alt="" width="250" height="150">
+        <h1>
+            <center><u> Let's Get You A Table</u></center>
+        </h1>
+        <center>
+            <form id="contact form" method="post">
+                <fieldset>
+                    <table>
+                        <h2>BOOK YOUR TABLE </h2>
+                        <tr>
+                            <th>Name</th>
+                            <td>:</td>
+                            <td><input type="text" name="name" id="name1" placeholder="Enter your Name"
+                                    style="border-style :solid;"></td>
+                        </tr>
+                        <tr>
+                            <th>Email-Id</th>
+                            <td>:</td>
+                            <td><input type="email" name="email" id="email1" placeholder="Enter your E-mail"
+                                    style="border-style :solid;"></td>
+                        </tr>
+                        <tr>
+                            <th>We'll Contact You Through</th>
+                            <td>:</td>
+                            <td><input type="number" name="number" id="number1" placeholder="Enter your contact Number"
+                                    style="border-style :solid;"></td>
+                        </tr>
+                        <tr>
+                            <th>No. of Guests?</th>
+                            <td>:</td>
+                            <td><input type="number" name="no . of people" id="guests"
+                                    placeholder="Enter the no. of people" style="border-style :solid;"></td>
+                        </tr>
+                        <tr>
+                            <th>Time</th>
+                            <td>:</td>
+                            <td><input type="time" name="time" id="time1" style="border-style :solid;"></td>
+                        </tr>
+                        <tr>
+                            <th>Date</th>
+                            <td>:</td>
+                            <td><input type="date" name="date" id="date1" style="border-style :solid;"></td>
+                        </tr>
+                        <tr>
+                            <th>Any special ocassion</th>
+                            <td>:</td>
+                            <td><input type="text" name="ocaasion" id="purpose1" placeholder="Enter the Ocassion"
+                                    style="border-style :solid;"></td>
+                        </tr>
+
+                    </table>
+                    <div class="buttons" style="margin-top:40px">
+                        <tr>
+                            <td>
+                                <input type="button" value="Book" name="Book" id="book1" onclick="makeAReservation()">
+                            </td>
+                            <td>
+                                <input type="reset" value="Refresh" name="Refresh" id="cancel1">
+                                <input type="button" value="Exit" name="Exit" id="exit1" onclick="">
+                        </tr>
+                    </div>
+                </fieldset>
+            </form>
+        </center>
+        <br><br><br>
+        <div class="home">
+            <a href="index.html">HOME</a>
+        </div>
+
+</body>
+
+</html>
